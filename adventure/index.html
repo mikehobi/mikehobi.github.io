@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+    	<div id="fade-to-black" data-start="opacity:0;" data-end="opacity:1;">
+    	</div>
+    	<div id="mountain" data-start="background-position:center 0px;" data-end="background-position: center -100px;">
+    	</div>
+    	<div id="beginning">
+    		<div class="container">
+
+    		</div>
+    	</div>
+    	<div id="falling">
+    	</div>
+   	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="skrollr.min.js"></script>
+    <script type="text/javascript">
+    var s = skrollr.init();
+    var scroll = $('body').scrollTop();
+    if(scroll==10)
+		{
+		  alert('SCROLL');
+		  $(body).animate({scrollTop:1400}, '500');
+		}
+    </script>
+	</body>
+</html>
