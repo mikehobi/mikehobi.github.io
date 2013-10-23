@@ -6,27 +6,31 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-    	<div id="fade-to-black" data-start="opacity:0;" data-end="opacity:1;">
-    	</div>
-    	<div id="mountain" data-start="background-position:center 0px;" data-end="background-position: center -100px;">
-    	</div>
-    	<div id="beginning">
-    		<div class="container">
+        <div id="page-container">
+            <div id="scroll-position"></div>
 
-    		</div>
-    	</div>
-    	<div id="falling">
-    	</div>
+        	<div id="fade-to-black" data-0="opacity:0;" data-9000="opacity:1;" data-10000="opacity:0;"></div>
+
+        	<div id="mountain" data-0="top:0px;opacity:1;" data-6000="top:-100px;opacity:0;" data-10000="opacity:0;"></div>
+            <div id="man" data-8000="bottom:-1000px;left:50%;" data-9000="bottom[cubic]:400px;left:50%;" data-10000="bottom[swing]:450px;" data-end="bottom[cubic]: 1px;left[swing]:50%;"></div>
+        	<div id="falling"></div>
+            <div id="falling2" data-8000="opacity:0;" data-9000="opacity:1;"></div>
+            <div id="darkness"></div>
+        </div>
    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="skrollr.min.js"></script>
     <script type="text/javascript">
     var s = skrollr.init();
-    var scroll = $('body').scrollTop();
-    if(scroll==10)
-		{
-		  alert('SCROLL');
-		  $(body).animate({scrollTop:1400}, '500');
-		}
+    
+    $(document).scroll(function() {
+            scrilla = $(document).scrollTop();
+            $( "#scroll-position" ).text( scrilla );
+            if (scrilla >= 500 && scrilla <= 1200) {
+                $('html, body').stop().animate({
+                    scrollTop: $("#darkness").offset().top
+                }, 5000);
+            }
+        });
     </script>
 	</body>
 </html>
