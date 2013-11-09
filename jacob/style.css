@@ -1,0 +1,289 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #fff url('images/background.png') center bottom no-repeat fixed;
+	font-family: Georgia, Times, serif;
+	line-height: 1.5;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+a {
+	text-decoration: none;
+	color: #999;
+}
+a:hover {
+	color: #a83636;
+}
+@font-face
+{
+font-family: OptimusPrinceps;
+src: url('fonts/OptimusPrinceps.ttf'),
+     url('fonts/OptimusPrinceps.eot'); /* IE9 */
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: "OptimusPrinceps";
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+}
+h1 {
+	font-weight: normal;
+	font-size: 5em;
+	margin-bottom: 30px;
+}
+h2 {
+	font-weight: normal;
+	font-family: 3em;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+.container {
+	height: 100%;
+	width: 960px;
+	position: relative;
+	margin: 0 auto;
+}
+a.tweet-it {
+	display: block;
+	background: #333 url('images/tweet-bw.png') no-repeat 4px bottom;
+	position: fixed;
+	left: 0;
+	top: 40px;
+	color: #fff;
+	padding:0 0 0 50px;
+	line-height: 32px;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+	width: 125px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #ccc;
+}
+a.tweet-it:hover {
+	background-position: 4px top;
+	color: #fff;
+}
+.twt-icon {
+	display: inline-block;
+	width: 33px;
+	height: 22px;
+	padding-top: 22px;
+}
+
+#more-bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #bbb;
+	z-index: -1;
+}
+#header {
+	padding-top: 200px;
+	padding-bottom: 280px;
+	height: auto;
+	text-align: center;
+	color: #000;
+	min-width: 960px;
+}
+#bio {
+	padding: 40px 0;
+}
+#bio-inner > div {
+	position: relative;
+	width: 400px;
+	margin: 0 auto 30px;
+	margin-right: 310px;
+}
+#bio-inner > div span {
+	position: absolute;
+	display: block;
+	right: 100%;
+	margin-right: 30px;
+	width: 200px;
+	text-align: right;
+	font-family: "OptimusPrinceps";
+	font-size: 1.3em;
+}
+div#bio-picture {
+	position: absolute;
+	top: 0px;
+	right: 80px;
+	background: url('images/jacob.png') center no-repeat;
+	display: block;
+	height: 256px;
+	width: 256px;
+	margin: 0;
+}
+#akqa {
+	min-width: 960px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	background: #111;
+	color: #fff;
+}
+#akqa-inner {
+	font-size: 1.5em;
+	line-height: 2;
+	letter-spacing: 1px;
+	text-align: center;
+	width: 860px;
+	margin: 0 auto;
+	padding: 60px 0 40px;
+}
+#map {
+	background: url('images/map.png') no-repeat top center;
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+.blip {
+	content: "";
+	background: #fff;
+	width: 9px;
+	height: 9px;
+	border:1px solid #fff;
+	border-radius: 100%;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+}
+.blip:hover {
+	background-color: #a11;
+}
+	.blip.sanf {
+		left: 143px;
+		top: 188px;
+	}
+	.blip.pdx {
+		left: 143px;
+		top: 168px;
+	}
+	.blip.ny {
+		left: 268px;
+		top: 180px;
+	}
+	.blip.lndn {
+		left: 444px;
+		top: 141px;
+	}
+	.blip.paris {
+		left: 454px;
+		top: 154px;
+	}
+	.blip.wdc {
+		left: 259px;
+		top: 191px;
+	}
+	.blip.atl {
+		left: 240px;
+		top: 212px;
+	}
+	.blip.amstr {
+		left: 464px;
+		top: 139px;
+	}
+	.blip.brln {
+		left: 489px;
+		top: 141px;
+	}
+	.blip.shng {
+		left: 748px;
+		top: 216px;
+	}
+	.blip.tokyo {
+		left: 793px;
+		top: 200px;
+	}
+
+
+
+#timeline {
+	background: #fff;
+	padding-bottom: 122px;
+}
+#timeline h1 {
+	font-size: 3.8em;
+	color: #fff;
+	text-align: center;
+	padding: 50px 0;
+	min-width: 960px;
+	background: #000;
+}
+.vertical-line {
+	height: 100%;
+	width: 5px;
+	position: absolute;
+	left: 0;
+	border-left: 2px solid #ccc;
+	margin-left: 279px;
+}
+.line {
+	height: auto;
+	min-height: 240px;
+	width: 300px;
+	margin-left: 480px;
+	margin-top: 40px;
+	position: relative;
+}
+.corp-box {
+	position: absolute;
+	right: 100%;
+	margin-right: 50px;
+	width: 300px;
+	text-align: center;
+}
+.corp-box h3 {
+	margin-bottom: 24px;
+	padding: 8px 0;
+	background: #fff;
+}
+.corp-box span {
+	font-size: .8em;
+	color: #888;
+	display: block;
+	margin-top:20px;
+	background: #fff;
+}
+.company-image {
+	background: #fff no-repeat center;
+	background-size: 70px;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 100%;
+	border: 2px solid #ccc;
+	box-shadow: 0 0 4px 4px #fff;
+}
+.company-image.aha { background-image: url('images/aha.png'); }
+.company-image.we { background-image: url('images/we.png'); }
+.company-image.rf { background-image: url('images/rf.png'); }
+.company-details {
+	color: #444;
+	padding-top: 40px;
+}
+#good {
+	margin-top: 40px;
+}
