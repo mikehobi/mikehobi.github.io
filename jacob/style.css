@@ -107,10 +107,10 @@ a.tweet-it:hover {
 	color: #000;
 	min-width: 960px;
 }
-.social-links {
+#social-links {
 	margin-top: 40px;
 }
-.social-links a {
+#social-links a {
 	margin: 0 20px;
 }
 #bio {
