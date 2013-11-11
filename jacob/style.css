@@ -22,7 +22,7 @@ body {
 }
 a {
 	text-decoration: none;
-	color: #999;
+	color: #888;
 }
 a:hover {
 	color: #a83636;
@@ -111,7 +111,20 @@ a.tweet-it:hover {
 	margin-top: 40px;
 }
 #links a {
+	display: inline-block;
 	margin: 0 20px;
+	width: 45px;
+	height: 45px;
+	opacity: 0.8;
+}
+#links a.twt {
+	background: url('images/twitter.png') no-repeat center;
+}
+#links a.ln {
+	background: url('images/linkedin.png') no-repeat center;
+}
+#links a:hover {
+	opacity: 1;
 }
 #bio {
 	padding: 40px 0;
@@ -151,14 +164,20 @@ div#bio-picture {
 	color: #fff;
 	overflow: hidden;
 }
+#akqa h1 {
+	font-size: 3em;
+	padding-top: 40px;
+	text-align: center;
+}
 #akqa-inner {
+	color: #ddd;
 	font-size: 1.5em;
 	line-height: 2;
 	letter-spacing: 1px;
 	text-align: center;
 	width: 860px;
 	margin: 0 auto;
-	padding: 60px 0 40px;
+	padding: 0 0 40px;
 }
 #map {
 	background: url('images/map.png') no-repeat top center;
@@ -231,7 +250,6 @@ div#bio-picture {
 #timeline {
 	background: #fff;
 	min-width: 960px;
-	padding-bottom: 0;
 }
 #timeline h1 {
 	font-size: 3.8em;
@@ -246,7 +264,7 @@ div#bio-picture {
 	width: 5px;
 	position: absolute;
 	left: 0;
-	border-left: 2px solid #ccc;
+	border-left: 3px solid #ccc;
 	margin-left: 279px;
 }
 .line {
@@ -256,6 +274,9 @@ div#bio-picture {
 	margin-left: 480px;
 	margin-top: 40px;
 	position: relative;
+}
+.line:last-child {
+	margin-bottom:100px;
 }
 .corp-box {
 	position: absolute;
@@ -269,6 +290,12 @@ div#bio-picture {
 	padding: 8px 0;
 	background: #fff;
 }
+.corp-box h3 a {
+	color: #222;
+}
+.corp-box h3 a:hover {
+	color: #a83636;
+}
 .corp-box span {
 	font-size: .8em;
 	color: #888;
@@ -277,6 +304,7 @@ div#bio-picture {
 	background: #fff;
 }
 .company-image {
+	display: block;
 	background: #fff no-repeat center;
 	background-size: 110px;
 	width: 100px;
@@ -286,6 +314,9 @@ div#bio-picture {
 	border-radius: 100%;
 	border: 2px solid #ccc;
 	box-shadow: 0 0 4px 4px #fff;
+}
+.company-image:hover {
+	border: 2px solid #a83636;
 }
 .company-image.aha { background-image: url('images/aha.png'); }
 .company-image.we { background-image: url('images/we.png'); }
@@ -305,8 +336,11 @@ div#bio-picture {
 	text-align: center;
 }
 #vid-desc {
-	padding: 70px 0;
-	font-size: 1.3em;
+	color: #444;
+	width: 700px;
+	margin: 0 auto;
+	padding: 90px 0;
+	font-size: 1.4em;
 	text-align: center;
 }
 
