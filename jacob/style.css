@@ -374,6 +374,8 @@ div#bio-picture {
 	#header {
 		width: 100%;
 		min-width: 0;
+		padding-top: 40px;
+		padding-bottom: 60px;
 	}
 	#bio {
 		width: 100%;
@@ -439,4 +441,11 @@ div#bio-picture {
 	.blip {
 		display: none;
 	}
+	#vid-desc {
+		width: 100%;
+	}
+	#map {
+		display: none;
+	}
+
 }
