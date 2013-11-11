@@ -335,6 +335,9 @@ div#bio-picture {
 #video {
 	text-align: center;
 }
+#video iframe {
+	box-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
 #vid-desc {
 	color: #444;
 	width: 700px;
