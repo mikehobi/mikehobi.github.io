@@ -347,6 +347,8 @@ div#bio-picture {
 /* MOBILE */
 #video-mobile {
 	display: none;
+	font-size: 2.3em;
+	text-align: center;
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:668px) { 
