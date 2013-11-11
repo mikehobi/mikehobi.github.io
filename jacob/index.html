@@ -10,13 +10,14 @@
         <script type="text/javascript" src="js/simplr.js"></script>
     </head>
     <body>
-    	<a href="https://twitter.com/intent/tweet?text=%40jshillin+%23J460" target="_blank" class="tweet-it" data-0="width:125px;opacity:1;" data-300="width:0;opacity:0.8;">Tweet @jshillin</a>
+    	<a href="https://twitter.com/intent/tweet?text=%40jshillin+%23J460" target="_blank" class="tweet-it" data-0="width:125px;opacity:1;" data-300="width:0;opacity:0.8;" data-200-end="width:0px;opacity:0.8;" data-end="width:125px;opacity:1;">Tweet @jshillin</a>
     	<div id="good-bg" data-anchor-target="#good" data-40-bottom-top="opacity: 0;" data-39-bottom-top="opacity: 1;">
     	</div>
     	<div id="header">
 			<div class="container">
 				<h1>Jacob Shilling</h1>
 				<h2>Associate Media Planner at AKQA</h2>
+				<div class="social-links"><a href="http://twitter.com/jshillin/"><img src="images/twitter.png" alt="twitter" /></a><a href="http://www.linkedin.com/in/jshillin"><img src="images/linkedin.png" alt="linkedin" /></a></div>
 			</div>
 		</div>
 		<div id="bio" data-bottom-top="background-color:rgba(255,255,255,0)" data-top-top="background-color:rgba(255,255,255,1)">
@@ -41,7 +42,7 @@
 				</div>
 				<div>
 				<span>Responsibilities</span>
-					<p>“Plan, buy, and execute digital media campaigns for clients. My job is to go out and put the ads in key places our target audience will see.”</p>
+					<p>Plan, buy, and execute digital media campaigns for clients. My job is to go out and put the ads in key places our target audience will see.</p>
 				</div>
 				<div>
 				<span>Past Experiences</span>
@@ -50,12 +51,12 @@
 					<p>Razor Fish, Seattle, WA</p>
 				</div>
 				<div>
-				<span>Passion About</span>
-					<p>“Understanding why people do things they do, and being able to understand these things more than anyone else.”</p>
+				<span>Passionate About</span>
+					<p>Understanding why people do things they do, and being able to understand these things more than anyone else.</p>
 				</div>
 				<div>
 					<span>Hobbies</span>
-					<p>Biking, music festivals, attending corporate happy hours.</p>
+					<p>Biking, music festivals, good beer and wine, exploring the city, whiskey gingers, and somehow combining all of those things into one.</p>
 				</div>
 			</div>
 		</div>
@@ -127,17 +128,19 @@
 		</div>
 		<div id="good">
 			<div class="container">
-			More stuff here.
+				<h1>Something to chew on</h1>
+				<div id="video">
+					<iframe width="640" height="360" src="http://www.youtube.com/embed/12PWq22E9CQ" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div id="vid-desc">Think about how this relates to media planning and be ready for Jacob on Friday.</div>
 			</div>
 		</div>
 	<script type="text/javascript">
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		 alert('youre on a phone');
+
 		}
 	else {
 		$(document).ready(function() {
-            var s = skrollr.init();
-
             $('.city-hover').hover(function() {
             	city = $(this).attr('id');
             	$('.' + city).css('background-color','#a11');
@@ -157,6 +160,11 @@
             });
 
         });
+        window.onload = function() {
+                skrollr.init({
+                forceHeight: false
+        });
+        }
 	}
 	</script>
 	</body>
