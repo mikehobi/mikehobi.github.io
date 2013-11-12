@@ -169,6 +169,12 @@ div#bio-picture {
 	padding-top: 40px;
 	text-align: center;
 }
+#akqa h1 a {
+	color: #fff;
+}
+#akqa h1 a:hover {
+	color: #a83636;
+}
 #akqa-inner {
 	color: #ddd;
 	font-size: 1.5em;
