@@ -1,6 +1,3 @@
-body {
-font-family: "jaf-facitweb",sans-serif;
-}
 #header {
 	height: auto;
 	background: #191919;
@@ -10,6 +7,7 @@ font-family: "jaf-facitweb",sans-serif;
 }
 #header h1 {
 	text-align: center;
+	font-family: "jaf-facitweb",sans-serif;
 }
 #work {
 
