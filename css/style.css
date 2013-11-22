@@ -1,13 +1,20 @@
+body {
+	background: #f1f1f1;
+}
 #header {
 	height: auto;
-	background: #191919;
-	border-bottom: 4px solid #000;
+	background: #232323;
+	border-bottom: 2px solid #000;
 	color: #fff;
-	padding: 40px 0;
+	padding: 140px 0;
+
+	text-align: center;
 }
 #header h1 {
-	text-align: center;
+	font-size: 3.9em;
 	font-family: "jaf-facitweb",sans-serif;
+	color: #fff;
+	text-shadow: 1px 1px rgba(0,0,0,0.1);
 }
 #work {
 
