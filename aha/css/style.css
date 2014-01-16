@@ -1,0 +1,142 @@
+html {
+	margin: 0;
+}
+body{
+	background:transparent url('http://upload.wikimedia.org/wikipedia/commons/1/15/Allen_Hall-1.jpg') center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family:'EB Garamond', serif;
+	margin:0;
+}
+h1,h2,h3,h4,h5,h6{margin:0;font-family:"quicksand",sans-serif;font-weight:normal;}
+h3{
+	font-size:1.76em;
+	letter-spacing:1px;
+	text-transform:uppercase;
+	font-family: 'Quicksand';
+	font-weight: normal;
+}
+h1 {
+	font-size: 3em;
+	text-transform:uppercase;
+	font-weight: bold;
+}
+p {
+	margin: 0;
+	padding: 20px 0;
+	line-height: 1.5;
+}
+.text-center {
+	text-align: center;
+}
+.container {
+	width: 768px;
+	margin: 0 auto;
+}
+.navbar {
+	background: #111;
+	opacity: .9;
+	color: #fff;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+
+}
+.navbar:hover {
+	opacity: 1 !important;
+
+	padding: 10px 0;
+	-webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+}
+.navbar ul {
+	margin: 0;
+	padding:0;
+	text-align:center;
+}
+.navbar ul li {
+	margin: 0;
+	list-style-type: none;
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 8px 14px;
+}
+.navbar ul li a {
+	display: inline-block;
+	color: rgba(255,255,255,0.6);
+	text-decoration: none;
+	padding: 6px 6px;
+	font-size: .9em;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	position: relative;
+}
+.navbar ul li a:hover {
+	color: rgba(255,255,255,1);
+	-webkit-transition: all .2s ease-in;
+	-moz-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+.navbar ul li a:before,.navbar ul li a:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background: rgba(255,255,255,0.6);
+	left: 0;
+	opacity: 0;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.navbar ul li a:before {
+	top: 0;
+	-webkit-transform: translateY(-5px);
+	-moz-transform: translateY(-5px);
+	transform: translateY(-5px);
+}
+.navbar ul li a:after {
+	bottom: 0;
+	-webkit-transform: translateY(5px);
+	-moz-transform: translateY(5px);
+	transform: translateY(5px);
+}
+.navbar ul li a:hover:before,.navbar ul li a:hover:after {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	transform: translateY(0);
+
+	-webkit-transition: transform .2s ease-in-out;
+	-moz-transition: transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+}
+#hero {
+	background: rgba(255,255,255,0.6);
+	padding: 130px 0 120px;
+	color: #221F20;
+	text-align: center;
+}
+.blue {
+	padding: 40px 0;
+	background: #363535;
+	border-top: 3px solid #232222;
+	color: #ababab;
+	font-size: 1.3em;
+}
+.blue h2 {
+	color: white;
+}
+.grey {
+	padding: 40px 0;
+	background: #A9B0B3;
+	border-top: 3px solid #979DA0;
+	font-size: 1.3em;
+}

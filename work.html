@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+
+    <style>
+    body{ 
+      font-family: helvetica;
+      color: white;
+      background: #85C23B;
+      margin: 0;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #85C23B;
+    }
+    .record {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        left: 50%;
+        margin-left: -300px;
+        top: 50%;
+        margin-top: -300px;
+        background: #333 url('http://fc04.deviantart.net/fs48/f/2009/170/3/7/Vinyl_Record_by_Ruffnekk73.jpg') center center no-repeat;
+        background-size: 637px;
+        border-radius: 100%;
+        box-shadow: 1px 1px 40px rgba(0,0,0,0.3);
+        -webkit-transition: all 500ms linear;
+      }
+    .box {
+      width: 1px;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      position:absolute;
+
+      -webkit-transform-origin: top left;
+      -webkit-transform-style: preserve-3D;
+      -webkit-transform: rotate(-90deg);
+
+
+      -webkit-transition: all 500ms linear;
+    }
+.box .day {
+  -webkit-transform-origin: top left;
+  -webkit-transform-style: preserve-3D;
+  -webkit-transform: rotate(160deg);
+  text-align: center;
+  padding-left: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 290px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.box .m {-webkit-transform: rotate(0deg);}
+.box .t {-webkit-transform: rotate(72deg);}
+.box .w {-webkit-transform: rotate(144deg);}
+.box .th {-webkit-transform: rotate(216deg);}
+.box .f {-webkit-transform: rotate(288deg);}
+
+.box-rotate {
+  -webkit-transition: -webkit-transform 100s linear;
+  -webkit-transform-origin: top left;
+  -webkit-transform-style: preserve-3D;
+  -webkit-transform: rotate(270deg);
+
+}
+.record-rotate {
+  -webkit-transition: -webkit-transform 100s linear;
+  -webkit-transform-style: preserve-3D;
+  -webkit-transform: rotate(360deg);
+}
+.box-push {
+  left: 20px;
+  -webkit-transform: rotate(-230deg);
+}
+
+.record-push {
+  left: 20px;
+  -webkit-transform: rotate(-140deg);
+}
+button {
+  display: block;
+  margin: auto;
+}
+
+.article {
+  position: fixed;
+  left: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  top:0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+
+  -webkit-transition: all .5s linear;
+}
+.article.active {
+  left: 50%;
+}
+    </style>
+    <body>
+      <div class="record"></div>
+        <div class="box">
+          <div class="day m"><a href="#">Monday</a></div>
+          <div class="day t"><a href="#">Tuesday</a></div>
+          <div class="day w"><a href="#">Wednesday</a></div>
+          <div class="day th"><a href="#">Thursday</a></div>
+          <div class="day f"><a href="#">Friday</a></div>
+        </div>
+
+        <div class="article">
+          <h2>Monday</h2>
+          <p>Lorem ipsum Ut cillum voluptate cupidatat in officia dolore anim esse quis non esse. Lorem ipsum Sint cillum occaecat sint in sint do exercitation minim occaecat dolor. Lorem ipsum Aliqua nulla culpa in fugiat mollit eiusmod occaecat cillum do cillum commodo consectetur. Lorem ipsum Adipisicing ea qui anim Excepteur consequat nostrud labore voluptate non.</p>
+
+          <p>Ut reprehenderit velit labore labore do quis culpa in exercitation cupidatat occaecat.</p>
+
+          <p>Aute qui irure exercitation ut occaecat deserunt.</p>
+
+
+        </div>
+        </div>
+      <button>click me</button>
+        <script>
+        $('button').click(function () {
+          $('.box').toggleClass('box-rotate');
+          $('.record').toggleClass('record-rotate');
+          });
+        $('.day a').click(function () {
+          $('.box').toggleClass('box-push');
+          $('.record').toggleClass('record-push');
+          $('.article').toggleClass('active');
+        });
+
+        </script>
+  </body>
+</html>

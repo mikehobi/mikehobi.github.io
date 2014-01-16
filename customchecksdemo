@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Gallery Hover Demo</title>
+   		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="//use.typekit.net/gvg0bbo.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    </head>
+    <style>
+    	body {
+    		font-family: Helvetica, sans-serif;
+    		margin: 0;
+    		background: #ececec;
+    	}
+    	h1,h2,h3,h4,h5,h6 {
+    		font-family: Montserrat;
+    		margin: 0;
+    		padding: 20px 0;
+    		color: #333;
+    		text-align: center;
+    	}
+    	span {
+            display: block;
+        }
+        .container {
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+    <body>
+
+		<header class="container">
+			<h1>Custom checkboxes</h1>
+			<h3>cool demo</h3>
+		</header>
+
+		<section>
+			<div class="container">
+				<span>
+                    <input id="checkbox1" type="checkbox" value="box">
+                    <label for="checkbox1">Opition 1</label>
+                </span>
+                <span>
+                    <input id="checkbox2" type="checkbox" value="box">
+                    <label for="checkbox2">Opition 2</label>
+                </span>
+                <span>
+                    <input id="checkbox3" type="checkbox" value="box">
+                    <label for="checkbox3">Opition 3</label>
+                </span>
+                <hr>
+                <form>
+                    <span>
+                        <input name="choice" id="radio1" type="radio" value="box">
+                        <label for="radio1">Opition 1</label>
+                    </span>
+                    <span>
+                        <input name="choice" id="radio2" type="radio" value="box">
+                        <label for="radio2">Opition 2</label>
+                    </span>
+                    <span>
+                        <input name="choice" id="radio3" type="radio" value="box">
+                        <label for="radio3">Opition 3</label>
+                    </span>
+                </form>
+			</div>
+		</section>
+
+	</body>
+</html>

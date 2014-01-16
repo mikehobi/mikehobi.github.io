@@ -1,0 +1,168 @@
+@import 'bourbon/bourbon';
+@import "animate.css";
+body {
+	background: #f1f1f1;
+	font-family: Helvetica, sans-serif;
+	margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	font-family: "jaf-facitweb";
+}
+h2 {
+	font-size: 1.76em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+p {
+	letter-spacing: 1px;
+	line-height: 1.5;
+	color: #ccc;
+}
+.container {
+	width: 1024px;
+	margin: 0 auto;
+	@include clearfix;
+}
+.description {
+	width: 450px;
+	display: inline-block;
+	vertical-align: top;
+}
+.box {
+	background: #554;
+	width: 23%;
+	margin: 0 1%;
+	height: 200px;
+	float: left;
+	&:nth-child(2n) {
+		background: #545;
+	}
+}
+.image {
+	width: 564px;
+	display: inline-block;
+	vertical-align: top;
+	img {
+		width: 100%;
+		margin: 20px auto;
+	}
+}
+#blue {
+	padding: 40px 0;
+	background: #445;
+	color: #eee;
+	font-size: 0;
+	section {
+		font-weight: lighter;
+		font-size: 12pt;
+		&.description {
+			padding-top: 50px;
+		}
+	}
+}
+#darkgrey {
+	padding: 40px 0;
+	background: #212121;
+	color: #eee;
+	font-size: 0;
+	section {
+		font-weight: lighter;
+		font-size: 12pt;
+		&.description {
+			padding-top: 140px;
+		}
+	}
+}
+#grey {
+	padding: 40px 0;
+	background: #bbb;
+	color: #445;
+	font-size: 0;
+	text-align: center;
+	section {
+		font-weight: lighter;
+		font-size: 12pt;
+		&.description {
+			padding-top: 140px;
+		}
+	}
+}
+#header {
+	height: auto;
+	background: #f1f1f1;
+	color: #333;
+	padding: 180px 0 200px;
+	text-align: center;
+	h1 {
+		font-size: 3.9em;
+		font-weight: bold;
+		color: #445;
+		cursor: default;
+
+		-moz-animation-name: fade;
+	    -moz-animation-iteration-count: once;
+	    -moz-animation-timing-function: ease-in;
+	    -moz-animation-duration: 1s;
+
+	    -webkit-animation-name: fade;
+	    -webkit-animation-iteration-count: once;
+	    -webkit-animation-timing-function: ease-in;
+	    -webkit-animation-duration: 1s;
+	} 
+	h3 {
+		color: #555;
+		margin: 20px 100px 0;
+		/*text-transform: uppercase;*/
+		font-size: 1.3em;
+
+		-moz-animation-name: fade;
+	    -moz-animation-iteration-count: once;
+	    -moz-animation-timing-function: ease-in;
+	    -moz-animation-duration: 1s;
+
+	    -webkit-animation-name: fade;
+	    -webkit-animation-iteration-count: once;
+	    -webkit-animation-timing-function: ease-in;
+	    -webkit-animation-duration: 1s;
+	}
+}
+#hallspot {
+	height: 400px;
+	width: 100%;
+	background: black;
+}
+#about {
+	margin: 120px 0 80px;
+	p {
+		color: #666;
+		letter-spacing: 0;
+		line-height: 1.6;
+		font-size: 1.1em;
+		margin: 0 80px 40px;
+		font-weight: lighter;
+		a {
+			color: #667;
+			&:hover {color: #445;}
+		}
+	}
+}
+.bio {
+	width: 700px;
+	margin:0 auto;
+}
+.swapbox {
+	margin-left: 700px;
+}
+
+.cover {
+	width: 100%;
+	height: 800px;
+	text-align: center;
+	display: table;
+	margin-bottom: 10px;
+}
+.cover > div {
+	display: table-cell;
+	vertical-align: middle;
+}

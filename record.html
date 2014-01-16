@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        margin: 0;
+        height: 100%;
+        font-family: Helvetica, sans-serif;
+    }
+    .record {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        left: 50%;
+        margin-left: -300px;
+        top: 50%;
+        margin-top: -300px;
+        background: #333;
+        border-radius: 100%;
+    }
+    .origin {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: rgba(0,0,0,0.5);
+        width: 200px;
+        height: 200px;
+
+    }
+    .origin-rotate {
+        -webkit-transition: all 5s linear;
+        -webkit-transform-origin: top left;
+        -webkit-transform-style: preserve-3D;
+        -webkit-transform: rotate(260deg);
+    }
+    .day {
+        -webkit-transform-origin: top left;
+        -webkit-transform-style: preserve-3D;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 297px;
+        text-align: right;
+        font-size: 1.7em;
+        text-transform: uppercase;
+        color: white;
+    }
+    .m {-webkit-transform: rotate(0deg);}
+    .t {-webkit-transform: rotate(72deg);}
+    .w {-webkit-transform: rotate(144deg);}
+    .th {-webkit-transform: rotate(216deg);}
+    .f {-webkit-transform: rotate(288deg);}
+    </style>
+    <body>
+        <button>click me</button>
+        <div class="record">
+        </div>
+        <div class="origin">
+            <div class="day m">Monday</div>
+            <div class="day t">Tuesday</div>
+            <div class="day w">Wednesday</div>
+            <div class="day th">Thursday</div>
+            <div class="day f">Friday</div>
+        </div>
+        <script>
+        $('button').click(function () {
+              $('.origin').toggleClass('origin-rotate');
+            });
+        </script>
+	</body>
+</html>

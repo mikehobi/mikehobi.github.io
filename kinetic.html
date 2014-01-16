@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/skrollr.min.js"></script>
+    </head>
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        margin: 0;
+        height: 100%;
+        font-family: Helvetica, sans-serif;
+    }
+    #beginbox {
+        width: 100%;
+        vertical-align: middle;
+        text-align: center;
+        padding: 300px 0;
+        box-sizing:border-box;
+    }
+    #bigassbox {
+        height: 140000px;
+        background: #d0e4f7; /* Old browsers */
+        background: -moz-linear-gradient(top,  #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0e4f7), color-stop(24%,#73b1e7), color-stop(50%,#0a77d5), color-stop(79%,#539fe1), color-stop(100%,#87bcea)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
+    }
+    .text {
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        color: black;
+        font-size: 4em;
+    }
+    </style>
+    <body>
+        <div id="scrollpos" style="position:fixed;left:10px;top:10px;font-size:3em;color: white;"></div>
+        <div id="beginbox">
+            <a href="#click" id="begin">Begin</a>
+        </div>
+        <div id="bigassbox">
+        </div>
+        <div class="text" data-1000="top:100%;" data-2000="top:45%;" data-4000="top:47%;" data-5000="top:-100%;">
+            ALPHABET
+        </div>
+        <div class="text" data-4500="top:100%;" data-5000="top:45%;" data-5500="top:50%;" data-6000="top:100%;">
+            ALPHABET
+        </div>
+        <div class="text" data-5000="top:100%;" data-7500="top:45%;" data-8000="top:40%;" data-9000="top:-100%;">
+            ALPHABET
+        </div>
+    <script type="text/javascript">
+    window.onload = function() {
+        skrollr.init();
+    }
+    var p = $( "body" );
+    $('#begin').click(function() {
+        $("html, body").animate({ scrollTop: $(document).height() }, 131000, "linear");
+    });
+    $('#bigassbox').click(function() {
+        var x = $('#scrollpos').text();
+        alert(x);
+    });
+    $(window).scroll(function() {
+        $( "#scrollpos" ).text( p.scrollTop() );
+    })
+
+    </script>
+	</body>
+</html>

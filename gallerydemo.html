@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Gallery Hover Demo</title>
+   		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="//use.typekit.net/gvg0bbo.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    </head>
+    <style>
+    	body {
+    		font-family: Helvetica, sans-serif;
+    		margin: 0;
+    		background: #222;
+    	}
+    	h1,h2,h3,h4,h5,h6 {
+    		font-family: Montserrat;
+    		margin: 0;
+    		padding: 20px 0;
+    		color: #eee;
+    		text-align: center;
+    	}
+    	#header {
+    		background: #333;
+    	}
+    	.container {
+    		width: 800px;
+    		margin: 0 auto;
+    		text-align: center;
+    	}
+    	.thumb {
+    		width: 170px;
+    		margin: 10px;
+    		display: inline-block;
+    		vertical-align: middle;
+    		cursor: pointer;
+            opacity: .9;
+
+    	}
+        .thumb:hover {
+            opacity: 1;
+        }
+    	.thumb img {
+    		width: 170px;
+    	}
+    	#gallery {
+    		position: relative;
+    		padding: 50px 0;
+    		overflow: hidden;
+    	}
+    	#gallerybg {
+    		position: absolute;
+    		z-index: -1;
+    		left: 0;
+    		right: 0;
+    		top: 0;
+    		bottom: 0;
+    		background-position: center bottom;
+    		opacity: .5;
+    		-webkit-filter: blur(50px);
+    		-webkit-transition: all .5s ease-out;
+
+			-webkit-transform: translateZ(0);
+			-o-transform: translateZ(0);
+			-moz-transform: translateZ(0);
+			transform: translateZ(0);
+    	}
+    </style>
+    <body>
+
+    	<section id="header">
+			<header class="container">
+				<h1>Gallery</h1>
+				<h3>cool demo</h3>
+			</header>
+		</section>
+
+		<section id="gallery" class="gallerydefault">
+			<div id="gallerybg">
+			</div>
+			<div class="container">
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/nightlife-q-c-640-480-7.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-7.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-5.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-2.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/food-q-c-640-480-8.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/nightlife-q-c-640-480-3.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-1.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-3.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-8.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/food-q-c-640-480-6.jpg" alt="photo">
+				</div>
+				<div class="thumb">
+					<img src="http://lorempixel.com/output/abstract-q-c-640-480-4.jpg" alt="photo">
+				</div>
+			</div>
+		</section>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skrollr.min.js"></script>
+	<script src="http://www.quasimondo.com/BoxBlurForCanvas/FastBlur.js"></script>
+	<script type="text/javascript">
+    window.onload = function() {
+                skrollr.init();
+    }
+
+    $( "#gallery .container .thumb" ).hover(function() {
+    	var imgUrl = $('img', this).attr("src");
+    	$('#gallerybg').css("background-image", "url(" + imgUrl + ")");
+    });
+
+ 	//    $(document).scroll(function() {
+	//     var snd = new Audio("flips.wav"); // buffers automatically when created
+	// 	snd.play();
+	// 	// setTimeout(snd.pause(), 1000);
+	// });
+    </script>
+	</body>
+</html>
