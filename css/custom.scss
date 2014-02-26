@@ -1,0 +1,455 @@
+@import 'bourbon/bourbon';
+body {
+    font-family: 'Proxima Nova', Helvetica, sans-serif;
+    margin: 0;
+    background: #ececec;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "ff-tisa-web-pro", Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    color: #333;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: #3f4b52;
+}
+a:hover {
+    color: #5d6e78;
+}
+hr {
+    border: 2px solid #ccc;
+}
+span {
+    display: inline-block;
+    margin: 10px;
+}
+.container {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.container-wide {
+    width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+}
+form {
+    text-align: center;
+}
+.dark-1 {
+    margin-top: 40px;
+    background: #405158;
+    padding: 140px 0;
+}
+.dark-2 {
+    background: rgb(47, 51, 53);
+    padding: 140px 0;
+}
+.light {
+    background: transparent;
+    padding: 140px 0;
+}
+.white {
+    background: white;
+    padding: 140px 0;
+}
+.black {
+    background: black;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+        color: #ddd;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+#custom-1 {
+    input[type='radio'], 
+    input[type='checkbox'] {
+        display: none;
+    }
+    input[type='radio'] + label,
+    input[type='checkbox'] + label {
+        margin: 0;
+        clear: none;
+        display: inline-block;
+        padding: 15px 15px 15px 45px;
+        cursor: pointer;
+        background: #5d6e78;
+        border-bottom: 3px solid #3f4b52;
+        color: #eaeaea;
+        border-radius: 5px;
+        position: relative;
+    }
+    input[type='radio'] + label:hover,
+    input[type='checkbox'] + label:hover {
+        background: #6b7f8b;
+        border-bottom: 2px solid #3f4b52;
+    }
+    /*
+    style an absolutely positioned white circle
+    for radio-buttons and a slighty rounded
+    square for the checkboxes
+    */
+    input[type='radio'] + label:before,
+    input[type='checkbox'] + label:before {
+        content: '';
+        background: #fff;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin-top: -12px;
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+    }
+    input[type='checkbox'] + label:before {
+        border-radius: 2px;
+    }
+    /*
+    the next shape will be the shape that only
+    appears when the input is checked
+    take note: opacity:0;
+    */
+    input[type='radio'] + label:after,
+    input[type='checkbox'] + label:after {
+        content: '';
+        background: #3f4b52;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        /* transitions */
+        transition: all .2s ease-in;
+        -moz-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        /* i've scaled the shape down so it will animate on the :checked state  */
+        transform: scale(0.1);
+        -moz-transform: scale(0.1);
+        -webkit-transform: scale(0.1);
+        opacity: 0;
+    }
+    input[type='checkbox'] + label:after {
+        border-radius: 1px;
+    }
+    /*
+    now we use the :checked selector to change
+    affect the opacity and scale of our checked
+    shape
+    */
+    input[type='radio']:checked + label:after,
+    input[type='checkbox']:checked + label:after {
+        background: #3f4b52;
+
+        transition: all .2s ease-in;
+        -moz-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transform: scale(1);
+        -moz-transform: scale(1);
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+#custom-2 {
+    span {
+        margin: 10px 30px;
+
+        -webkit-perspective: 100px;
+        -moz-perspective: 100px;
+        perspective: 100px;
+    }
+    input[type='checkbox'] {
+        display: none;
+    }
+    input[type='checkbox'] + label {
+        margin: 0;
+        clear: none;
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+        background: #f43c41;
+        color: #eaeaea;
+        position: relative;
+
+        -webkit-transition: background 0.6s;
+        -moz-transition: background 0.6s;
+        transition: background 0.6s;
+
+        -webkit-transform-origin: 50% 0;
+        -moz-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        -webkit-transform-origin: 0% 50%;
+        -moz-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+    }
+    input[type='checkbox'] + label:hover {
+        background: #cb3135;
+    }
+    input[type='checkbox'] + label:before {
+        content: 'X';
+        color: #cb3135;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 10px 0;
+        width: 34px;
+
+        -webkit-transform: rotateY(10deg);
+        -moz-transform: rotateY(10deg);
+        transform: rotateY(10deg);
+        -webkit-transition: -webkit-transform .4s;
+        -moz-transition: -moz-transform .4s;
+        transition: transform .4s;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+        pointer-events: none;
+    }
+    input[type='checkbox']:checked + label:before {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+
+        -webkit-transition: all .4s ease-in;
+        @include transition ( all 500ms cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+        @include transition-timing-function( cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+    }
+}
+#custom-3 {
+    input[type='radio'] {
+        display: none;
+    }
+    input[type='radio'] + label {
+        margin: 0;
+        clear: none;
+        display: inline-block;
+        overflow: hidden;
+        width: 80px;
+        height: 90px;
+        cursor: pointer;
+        color: #eaeaea;
+        border-radius: 5px;
+        position: relative;
+        &#female {
+            background: #ed5fab;
+            &:hover {
+                background: #ff65b8;
+            }
+        }
+        &#male {
+            background: #76a5e4;
+            &:hover {
+                background: #76a5e4;
+            }
+        }
+        span {
+            margin: 0;
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            display: block;
+            opacity: .5;
+            @include transition ( all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) );
+        }
+    }
+    input[type='radio'] + label:before {
+        content: '';
+        background: rgba(0,0,0,0.2);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        @include transition ( all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000));
+    }
+    input[type='radio']:checked + label {
+        span {
+            opacity: 1;
+            @include transition ( all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) );
+        }
+    }
+    input[type='radio']:checked + label:before {
+        content: '';
+        background: rgba(0,0,0,0.2);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        height: 100%;
+        @include transition ( all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000));
+    }
+}
+#custom-4 {
+    span {
+        margin: 10px 30px;
+
+        -webkit-perspective: 100px;
+        -moz-perspective: 100px;
+        perspective: 100px;
+    }
+    input[type='checkbox'] {
+        display: none;
+    }
+    input[type='checkbox'] + label {
+        margin: 0;
+        clear: none;
+        display: inline-block;
+        padding: 10px 10px 10px 40px;
+        cursor: pointer;
+        background: #249CC6;
+        border-radius: 4px;
+        color: rgba(255,255,255,0.7);
+        position: relative;
+        @include transition ( all 0.6s );
+        @include transform-origin ( 50% 0 );
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        -webkit-transform-origin: 0% 50%;
+        -moz-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+    }
+    input[type='checkbox'] + label:hover {
+        color: rgba(255,255,255,1);
+    }
+    input[type='checkbox'] + label:before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        bottom: 0;
+        margin-top: -1px;
+        @include transition ( all .4s);
+        @include transform-origin(  50% 50% );
+        pointer-events: none;
+        opacity: 0;
+    }
+    input[type='checkbox'] + label:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        bottom: 0;
+        margin-top: -1px;
+        @include transition ( all .4s);
+        @include transform-origin( 50% 50% );
+        pointer-events: none;
+        opacity: 0;
+    }
+    input[type='checkbox']:checked + label {
+        color: rgba(255,255,255,1);
+    }
+    input[type='checkbox']:checked + label:before {
+        opacity: 1;
+
+        @include transform( rotate(45deg) );
+        @include transition ( all 500ms cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+        @include transition-timing-function( cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+    }
+    input[type='checkbox']:checked + label:after {
+        opacity: 1;
+        @include transform( rotate(-45deg) );
+        @include transition ( all 500ms cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+        @include transition-timing-function( cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+    }
+}
+#custom-5 {
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    input[type='radio'] {
+        display: none;
+    }
+    input[type='radio'] + label {
+        width: 100px;
+        clear: none;
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        @include transition ( all 0.6s );
+        @include transform-origin ( 50% 0 );
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        -webkit-transform-origin: 0% 50%;
+        -moz-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+    }
+    input[type='radio']:checked + label {
+        color: #a90000;
+    }
+    .effect {
+        width: 100px;
+        height: 2px;
+        position: absolute;
+        left: 100%;
+        bottom: 0;
+        background: red;
+
+        @include transition ( all 500ms cubic-bezier(0.550, 0.055, 0.215, 1.265) );
+    }
+    #checkbox5-1 {
+        &:checked {
+            ~ .effect {
+                left: 114px;
+            }
+        }
+    }
+    #checkbox5-2 {
+        &:checked {
+            ~ .effect {
+                left: 238px;
+            }
+        }
+    }
+    #checkbox5-3 {
+        &:checked {
+            ~ .effect {
+                left: 362px;
+            }
+        }
+    }
+    #checkbox5-4 {
+        &:checked {
+            ~ .effect {
+                left: 486px;
+            }
+        }
+    }
+}

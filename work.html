@@ -7,11 +7,22 @@
     </head>
 
     <style>
+    html {
+      height: 100%;
+    }
     body{ 
       font-family: helvetica;
       color: white;
-      background: #85C23B;
       margin: 0;
+
+      background: rgb(133,194,59); /* Old browsers */
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(133,194,59,1) 0%, rgba(84,158,0,1) 100%); /* FF3.6+ */
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(133,194,59,1)), color-stop(100%,rgba(84,158,0,1))); /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(133,194,59,1) 0%,rgba(84,158,0,1) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(center, ellipse cover,  rgba(133,194,59,1) 0%,rgba(84,158,0,1) 100%); /* Opera 12+ */
+      background: -ms-radial-gradient(center, ellipse cover,  rgba(133,194,59,1) 0%,rgba(84,158,0,1) 100%); /* IE10+ */
+      background: radial-gradient(ellipse at center,  rgba(133,194,59,1) 0%,rgba(84,158,0,1) 100%); /* W3C */
+
     }
     a {
       color: #fff;

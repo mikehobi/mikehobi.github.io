@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Gallery Hover Demo</title>
-   		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <title>css :nth-of-type limiter</title>
         <script type="text/javascript" src="//use.typekit.net/gvg0bbo.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     </head>
@@ -14,7 +13,7 @@
     		background: #ececec;
     	}
     	h1,h2,h3,h4,h5,h6 {
-    		font-family: Montserrat;
+    		font-family: "ff-tisa-web-pro", Helvetica, sans-serif;
     		margin: 0;
     		padding: 20px 0;
     		color: #333;
@@ -24,66 +23,66 @@
             display: block;
         }
         .container {
-            width: 500px;
+            width: 700px;
             margin: 0 auto;
+            text-align: center;
         }
-        .limit-10
-            li:nth-child(1n+11) {
+
+        li {
+            font-size: 0;
+            display: inline-block;
+            width: 160px;
+            vertical-align: middle;
+            background: black;
+            margin: 10px;
+        }
+        li img {
+            max-width: 100%;
+        }
+        .limit
+            li:nth-of-type(n+6) {
                 display: none;
                 opacity: 0;
         }
-        .limit-10 {
+        .limit {
             height: auto;
-
+            margin: 0;
+            padding: 0;
             -webkit-transition: all .5s ease-out;
         }
-        #toggle:target li:nth-child(1n+11) {
+        #more:target li:nth-of-type(n) {
             display: inline-block;
             opacity: 1;
-        }
-        li {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            background: black;
-            margin: 10px;
         }
     </style>
     <body>
 
 		<header class="container">
-			<h1>Custom checkboxes</h1>
-			<h3><a href="#toggle">Show</a> - <a href="#less">Hide</a></h3>
+			<h1>:nth-of-type display limiter</h1>
+			<h3><a href="#more">Show</a> - <a href="#less">Hide</a></h3>
 		</header>
 
-		<section>
+		<section class="container">
 
-			<ul class="limit-10" id="toggle">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+<ul class="limit" id="more">
+    <li><img src="http://lorempixel.com/400/300" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/500" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/600" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/550" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/450" alt="picture"></li>
 
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+    <li><img src="http://lorempixel.com/400/510" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/310" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/650" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/430" alt="picture"></li>
+    <li><img src="http://lorempixel.com/400/334" alt="picture"></li>
 
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><img src="http://lorempixel.com/400/330" alt="picture"></li>
+                <li><img src="http://lorempixel.com/400/630" alt="picture"></li>
+                <li><img src="http://lorempixel.com/400/530" alt="picture"></li>
+                <li><img src="http://lorempixel.com/400/640" alt="picture"></li>
+                <li><img src="http://lorempixel.com/400/700" alt="picture"></li>
             </ul>
 		</section>
-
 	</body>
 </html>

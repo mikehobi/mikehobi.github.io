@@ -1,0 +1,153 @@
+body {
+	margin: 0;
+	background: #00acea;
+	font-family: Bebas Neue, Helvetica, sans-serif;
+}
+h1 {
+	text-transform: uppercase;
+	margin:0;
+	font-size: 3.6em;
+	margin: 0 0 25px;
+	font-weight: normal;
+}
+h2 {
+	text-transform: uppercase;
+	margin:30px 0 10px;
+	font-weight: normal;
+}
+.pop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 99;
+}
+.pop-inner {
+	width: 640px;
+	height: auto;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	margin-left: -320px;
+	z-index: 999;
+}
+#countdown {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size:1.3em;
+	margin-top: 40px;
+}
+#countdown h4 {
+	margin: 0;
+	display: inline-block;
+	margin-right: 10px;
+}
+#countdown span {
+	color: white;
+}
+#countdown p {
+	display: inline-block;
+	margin: 0;	
+}
+.input-section {
+	font-size: 1.5em;
+	width: 350px;
+}
+label {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+input {
+	border: 2px solid black;
+	font-size: .9em;
+	width: 160px;
+}
+ul.locations {
+	margin: 0;
+	padding: 0 20px;
+	list-style-type: none;
+}
+
+li {
+	margin:0;
+	padding:0;
+	text-transform: uppercase;
+}
+li a {
+	text-decoration: none;
+	color: black;
+}
+li a:hover {
+	color: white;
+}
+ul.locations li span {
+	display: inline;
+}
+ul.locations.hide-codes li span {
+	display: none;
+}
+.container {
+	margin:0 auto;
+	padding:20px;
+	width:1024px;
+	font-size: 1.6em;
+	position: relative;
+}
+.map {
+	width:680px;
+	height: 450px;
+	position: absolute;
+	right: 0;
+	top: 160px;
+	background: url(images/map.png) no-repeat center;
+
+}
+.map img {max-width: 100%;float:right;}
+.blip {
+	background: url(images/blip.png) no-repeat center;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	background-size: 100%;
+	border-radius: 100%;
+	display: block;
+	cursor: pointer;
+}
+.blip:hover {
+	background-color: white;
+}
+	.blip.ny {
+		left: 576px;
+		top: 160px;
+	}
+	.blip.chi {
+		left: 431px;
+		top: 156px;
+	}
+	.blip.stl {
+		left: 390px;
+		top: 210px;
+	}
+	.blip.atl {
+		left: 490px;
+		top: 302px;
+	}
+	.blip.aus {
+		left: 312px;
+		top: 335px;
+	}
+	.blip.sanf {
+		left: -1px;
+		top: 148px;
+	}
+	.blip.la {
+		left: 25px;
+		top: 232px;
+	}
+	.blip.sea {
+		left: 50px;
+		top: 28px;
+	}
