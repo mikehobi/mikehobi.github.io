@@ -1,23 +1,52 @@
 @import 'bourbon/bourbon';
 @import "animate.css";
+@include keyframes( phone-slide ) {0% {margin-top:0;} 50% {margin-top:-480px;} 100% {margin-top:-480px;}}
+@include keyframes(spinny ) {
+		0% {
+			@include transform( rotate(0deg) );
+		}
+		100% {
+			@include transform( rotate(360deg) );
+		}
+}
+@include keyframes(jitter ) {
+		0% {
+			@include transform( scale(1) translateX(0px) );
+
+		}
+		100% {
+			@include transform( scale(.5) translateX(-20px) );
+		}
+}
+html {
+	font-size: 62.5%
+}
 body {
-	background: #f1f1f1;
+	background: #f8f6e7;
 	font-family: Helvetica, sans-serif;
 	margin: 0;
 }
 h1,h2,h3,h4,h5,h6 {
 	margin: 0;
-	font-family: "jaf-facitweb";
+	font-family: "jaf-facitweb", dinc;
+}
+h1 {
+	font-size: 4.2rem;
 }
 h2 {
-	font-size: 1.76em;
+	font-size: 2.9rem;
 	letter-spacing: 1px;
-	text-transform: uppercase;
 }
 p {
 	letter-spacing: 1px;
 	line-height: 1.5;
 	color: #ccc;
+}
+.text-right {
+	text-align: right;
+}
+.margin-right-40 {
+	margin-right: 80px;
 }
 .container {
 	width: 1024px;
@@ -39,36 +68,123 @@ p {
 		background: #545;
 	}
 }
+.macbook-box {
+	width: 400px;
+	position: absolute;
+	min-height: 413px;
+	display: inline-block;
+	left: 20px;
+	vertical-align: top;
+	background: url("../images/macbook-vector.png") no-repeat center;
+	@include background-size( 100% );
+	overflow: hidden;
+	@include clearfix;
+}
+.iphone-box {
+	width: 300px;
+	min-height: 413px;
+	display: inline-block;
+	right: 20px;
+	position: absolute;
+	vertical-align: top;
+	background: url("../images/iphone-vector.png") no-repeat center;
+	overflow: hidden;
+	@include clearfix;
+}
+.iphone-inner {
+	width: 214px;
+	top: 82px;
+	overflow: scroll;
+	position: absolute;
+	background: #b8b2ac;
+	left: 47px;
+	img {
+		width: 100%;
+		margin: 20px auto;
+	}
+	> div {
+		margin-top:0px;
+		@include animation( phone-slide 3000ms ease-out  );
+		@include animation-iteration-count( infinite );
+		> div {
+			width: 90%;
+			background: #feffee;
+			margin:10px auto;
+			height: 150px;
+			position: relative;
+			@include box-sizing( border-box );
+			padding-top: 14px;
+			&:before {
+				content: '';
+				position: absolute;
+				top:0;
+				left:0;
+				right:0;
+				height: 16px;
+			}
+			&.blue:before {
+				background: #4484a0;
+			}
+			&.red:before {
+				background: #db4541;
+			}
+			&.green:before {
+				background: #5ee667;
+			}
+		}
+	}
+}
+.line-1,.line-2,.line-3,.line-4  {
+	content: '';
+	width: 170px;
+	margin: 0 auto;
+	height: 10px;
+	margin: 20px 0 0 10px;
+	background: #ccc;
+}
+.line-2  {
+	width: 140px;
+}
+.line-3  {
+	width: 130px;
+}
+.line-4  {
+	width: 120px;
+}
 .image {
 	width: 564px;
 	display: inline-block;
 	vertical-align: top;
+	position: relative;
+	min-height: 413px;
 	img {
 		width: 100%;
 		margin: 20px auto;
 	}
 }
 #blue {
-	padding: 40px 0;
-	background: #445;
+	padding: 40px 0 0;
+	background: #3d3d4c;
+	@include background-image(linear-gradient(#445 0, #3d3d4c 100% ));
 	color: #eee;
 	font-size: 0;
 	section {
 		font-weight: lighter;
-		font-size: 12pt;
+		font-size: 1.6rem;
+		line-height: 1.5;
 		&.description {
 			padding-top: 50px;
 		}
 	}
 }
 #darkgrey {
-	padding: 40px 0;
+	padding: 0 0;
 	background: #212121;
 	color: #eee;
 	font-size: 0;
 	section {
 		font-weight: lighter;
-		font-size: 12pt;
+		font-size: 1.6rem;
 		&.description {
 			padding-top: 140px;
 		}
@@ -90,14 +206,14 @@ p {
 }
 #header {
 	height: auto;
-	background: #f1f1f1;
+	background: transparent;
 	color: #333;
-	padding: 180px 0 200px;
+	padding: 160px 0 200px;
 	text-align: center;
 	h1 {
-		font-size: 3.9em;
+		font-size: 4.7rem;
 		font-weight: bold;
-		color: #445;
+		color: #1e2429;
 		cursor: default;
 
 		-moz-animation-name: fade;
@@ -112,9 +228,9 @@ p {
 	} 
 	h3 {
 		color: #555;
-		margin: 20px 100px 0;
+		margin: 28px 100px 0;
 		/*text-transform: uppercase;*/
-		font-size: 1.3em;
+		font-size: 1.8rem;
 
 		-moz-animation-name: fade;
 	    -moz-animation-iteration-count: once;
@@ -138,7 +254,7 @@ p {
 		color: #666;
 		letter-spacing: 0;
 		line-height: 1.6;
-		font-size: 1.1em;
+		font-size: 1.6rem;
 		margin: 0 80px 40px;
 		font-weight: lighter;
 		a {
@@ -165,4 +281,60 @@ p {
 .cover > div {
 	display: table-cell;
 	vertical-align: middle;
+}
+.spinny {
+		@include animation( spinny 3000ms linear  );
+		@include animation-iteration-count( infinite );
+		position: relative;
+width: 400px;
+height: 400px;
+}
+.image-1 {
+width: 140px;
+height: 140px;
+background: rgb(255,0,255);
+position: absolute;
+left: 50%;
+bottom: 50%;
+margin-bottom: -20px;
+margin-left: -70px;
+z-index: 2;
+border-radius: 100%;
+opacity: .5;
+
+		@include animation( jitter 4000ms ease-in-out  );
+		@include animation-iteration-count( infinite );
+		@include animation-direction( alternate );
+}
+.image-2{
+width: 140px;
+height: 140px;
+background: rgb(0,255,255);
+position: absolute;
+right: 50%;
+margin-right: -15px;
+top: 180px;
+z-index: 1;
+border-radius: 100%;
+opacity: .5;
+
+		@include animation( jitter 4000ms ease-in-out  );
+		@include animation-iteration-count( infinite );
+		@include animation-direction( alternate );
+}
+.image-3 {
+	width: 140px;
+height: 140px;
+background: rgb(255,255,0);
+position: absolute;
+left: 50%;
+margin-left: -15px;
+top: 180px;
+z-index: 3;
+border-radius: 100%;
+opacity: .5;
+
+		@include animation( jitter 4000ms ease-in-out  );
+		@include animation-iteration-count( infinite );
+		@include animation-direction( alternate );
 }

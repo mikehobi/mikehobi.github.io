@@ -1,0 +1,171 @@
+<div class="card-container">
+    {{#each model.cards}}
+    {{#if isPhoto}}
+    <div class="card-head clearfix">
+        <div class="card-title">
+            {{#linkTo 'people' createdBy.id}}
+            <div class="user-picture card-user-picture">
+                <img {{bindAttr src="createdBy.imageUrl"}}>
+            </div>
+            {{createdBy.name}}<span> added a photo.</span>
+            {{/linkTo}}
+            <div class="cardtimestamp"><span>Posted {{createdAgo}}</span></div>
+        </div>
+        <div {{bind-attr class=":card-options-link this.isShowingCardOptions:active"}}>
+            <a {{action 'toggleCardOptions' this}}>Actions</a>
+        </div>
+        <div {{bind-attr class=":card-options this.isShowingCardOptions:active"}}>
+            <ul>
+                {{#if flaggedByCurrentUser }}
+                <li><p class="actiondropdown">Thanks! We'll review this image.</p></li>
+                {{else}}
+                <li><a {{action 'flag' this }}>Flag Image</a></li>
+                {{/if}}
+                <li><a {{action 'hide' this }}>Don't show me this</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content card-picture">
+            {{#linkTo 'photo' this.entityId}}<img {{bindAttr src="imageUrl"}} {{bindAttr alt="name"}} class="picture" />{{/linkTo}}
+            {{#if description}}
+            <div class="card-desc">
+                <div class="card-desc-inner">{{description}}</div>
+            </div>
+            {{/if}}
+        </div>
+        <div class="card-bottom clearfix">
+            {{#if spottedHere}}
+            <div class="card-tags">
+                <div class="tags">
+                    {{#if spottedHereIsLong}}
+                    <ul>
+                        <li class="tag-icon"><a><img src="/static/images/tagsdark.png" /></a></li>
+                        {{#each spottedHereSlice}}
+                        <li>{{#linkTo 'people' id classNames="tooltip_"}}<span>{{this.name}}</span>{{#if imageUrl}}<img {{bindAttr src="this.imageUrl"}} />{{else}}<img src="/static/images/userdefaultpic.png" alt="Default" />{{/if}}{{/linkTo}}</li>
+                        {{/each}}
+                        <div {{bind-attr class=":more-spots-link this.isShowingAllSpots:active"}}>
+                            <a {{action 'toggleAllSpots' this}}>+ {{spottedHereSliceLength}}</a>
+                        </div>
+                        <div {{bind-attr class=":all-spots this.isShowingAllSpots:active"}}>
+                            <div class="card-tags-all">
+                                <ul>{{#each spottedHereSliceEnd}}
+                                    <li>{{#linkTo 'people' id classNames="tooltip_"}}<span>{{this.name}}</span>{{#if imageUrl}}<img {{bindAttr src="this.imageUrl"}} />{{else}}<img src="/static/images/userdefaultpic.png" alt="Default" />{{/if}}{{/linkTo}}</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                    {{else}}
+                    <ul>
+                        <li class="tag-icon"><img src="/static/images/tagsdark.png" /></li>
+                        {{#each spottedHere}}
+                        <li>{{#linkTo 'people' id classNames="tooltip_"}}<span>{{this.name}}</span>{{#if imageUrl}}<img {{bindAttr src="this.imageUrl"}} />{{else}}<img src="/static/images/userdefaultpic.png" alt="Default" />{{/if}}{{/linkTo}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+            </div>
+            {{/if}}
+            <div class="card-actions">
+                {{#linkTo 'photo' this.entityId classNames="comment-button"}}{{numComments}} <span>{{pluralize numComments "Comment"}}</span>{{/linkTo}}
+                <a {{ action "like" this on="click"}} {{bind-attr class=":like-button likedByCurrentUser:active"}}>{{numLikes}}</a>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{#if isEvent}}
+    <div class="card-head clearfix">
+        <div class="card-title">
+            <div class="user-picture card-user-picture"><img src="/static/images/feedevent.png"></div>{{#linkTo 'event' this.entityId}}{{name}}{{/linkTo}}
+            <div class="cardtimestamp"><span>Created {{createdAgo}}</span></div>
+        </div>
+        <div {{bind-attr class=":card-options-link this.isShowingCardOptions:active"}}>
+            <a {{action 'toggleCardOptions' this}}>Actions</a>
+        </div>
+        <div {{bind-attr class=":card-options this.isShowingCardOptions:active"}}>
+            <ul>
+                <li><a {{action 'flag' this }}>Flag Event</a></li>
+                <li><a {{action 'hide' this }}>Don't show me this</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card"> <!--- event card -->
+        <div class="card-content clearfix">
+            <div class="calendar-card">
+                {{eventMonth startTime}}
+                <strong>{{eventDay startTime}}</strong>
+            </div>
+            <div class="card-event-details">
+                <ul>
+                    <li>
+                        <div class="icon-location"></div>
+                        {{#if location.verified }}
+                            <span>{{#linkTo 'location' location.id}}{{location.name}}{{/linkTo}}</span>
+                        {{ else }}
+                            <span>{{location.name}} @ {{location.address}}</span>
+                        {{/if}}
+                    </li>
+                    <li><div class="icon-time"></div><span>{{eventStartTime startTime}} - {{eventEndTime endTime}}</span></li>
+                    <li>{{#if imageUrl}}<div class="user-picture"><img {{bindAttr src="user_image_url"}} /></div>{{else}}<div class="icon-person"></div><span>Host: {{#linkTo 'people' createdBy.id }}{{createdBy.name}}{{/linkTo}}</span></li>{{/if}}
+                </ul>
+            </div>
+            <div class="card-event-description">
+                {{#if description}}
+                {{description}}
+                {{else}}
+                Sorry, there is no description available for this event.
+                {{/if}}
+                <div class="card-event-description-gradient"></div>
+            </div>
+        </div>
+        <div class="card-event-bottom clearfix">
+            <ul class="card-event-attendees">
+                {{#each rsvps}}
+                <li>{{#linkTo 'people' this.userId }}<img {{bindAttr src="this.userImageUrl"}} />{{/linkTo}}{{ this.userName }}</li>
+                {{/each}}
+                <li>{{numRsvps}} Attending</li>
+            </ul>
+            
+            <div class="card-event-more">
+                {{#linkTo 'event' entityId}}More info{{/linkTo}}
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{#if isLocation}}
+    <div class="card-head clearfix">
+        <div class="card-title">
+            <div class="user-picture card-user-picture"><img src="/static/images/feedlocation.png"></div>{{#linkTo 'location' this.entityId}}{{name}}{{/linkTo}}
+            <div class="cardtimestamp">{{address}}</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content clearfix">
+            <div class="card-location-left">
+                <div class="card-location-map">
+                    <img src="http://api.tiles.mapbox.com/v3/hallspot.g9hk74lj/pin-m+a83636({{unbound lng}},{{unbound lat}})/{{unbound lng}},{{unbound lat}},16/235x235.png" alt="Location Map"  />
+                </div>
+            </div>
+             {{#linkTo 'location' this.entityId}}
+            <div class="card-location-middle">
+                <ul>
+                    <li><img src="/static/images/photored.png">{{numPhotos}}</li>
+                    <li><img src="/static/images/likered.png">{{numLikes}}</li>
+                    <li><img src="/static/images/addeventred.png">{{numEvents}}</li>
+                </ul>
+            </div>
+            <div class="card-location-right">
+                <div class="card-location-picture">
+                   {{#if imageUrl}}
+                    <img {{bindAttr src="imageUrl"}} />
+                    {{else}}
+                    <div class="nothing-coming-location-card"><span>There are currently no photos.</span></div>
+                    {{/if}}{{/linkTo}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>

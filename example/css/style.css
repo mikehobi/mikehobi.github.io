@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	background: black;
+	color: white;
+}
+h1 {
+	margin:0;
+	text-align: center;
+}
+section {
+	
+	padding: 280px 0;
+	background: #203c5f;
+}
+p {
+	width: 480px;
+	margin:0 auto;
+	padding: 40px 0;
+}
+.no-pad {
+	padding: 0 !important;
+}
+.beige {
+	background-color: #feffcc;
+	color: black;
+}
+#grey {
+	background-color: #313131;
+}
