@@ -112,5 +112,5 @@ a {
 	}
 }
 @media all and (max-width: 845px) {
-	.col {width: 100%;}
+	.col {width: 100%;min-width: 200px;}
 	}
