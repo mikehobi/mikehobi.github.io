@@ -1,0 +1,95 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: helvetica, arial;
+	line-height: 1.5;
+	font-weight: lighter;
+}
+h1 {
+	color: white;
+	letter-spacing: .5px;
+	font-size: 38px;
+	margin-top: 0;
+	font-weight: 100;
+}
+.fixedbg {
+	position: fixed;
+	right: 0;
+	left:0;
+	top: 0;
+	height: 100%;
+	background: url(images/blurr.png) center;
+	background-size: 100%;
+	z-index: -1;
+}
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+.container-small {
+	width: 700px;
+	margin: 0 auto;
+}
+.top {
+	background: #212121;
+	color: white;
+	padding: 80px 0;
+}
+.top p {
+	line-height: 1.633;
+	letter-spacing: .8px;
+}
+.grid {
+	font-size: 0;
+	text-align: center;
+}
+@media all and (max-width: 1201px) {
+	.container {
+		width: 90%;
+	}
+}
+.col {
+	font-size: 16px;
+	width: 400px;
+	min-height: 500px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.col-inner {
+	background: rgba(0,0,0,0.8);
+	padding: 20px;
+	color: #e1e1e1;
+	letter-spacing: .5px;
+	line-height: 1.6;
+}
+.col-inner:nth-child(3) {
+	background: red;
+}
+.col p {
+	text-align: left;
+}
+.round-picture {
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.round-picture img {
+	width: 100%;
+}
+@media all and (max-width: 1201px) {
+	.col {
+		width: 50%;
+		min-width: 380px;
+	}
+}
+@media all and (max-width: 845px) {
+	.col {width: 100%;}
+	}
