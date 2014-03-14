@@ -8,6 +8,7 @@ body {
 	font-family: helvetica, arial;
 	line-height: 1.5;
 	font-weight: lighter;
+	background: #161616;
 }
 h1 {
 	color: white;
@@ -20,6 +21,7 @@ h1 {
 h3 {
 	color: #77a0ff;
 	font-weight: 100;
+	font-size: 22px;
 }
 a {
 	color: #ff698a;
@@ -34,6 +36,12 @@ a {
 	background-size: 100%;
 	z-index: -1;
 }
+
+@media all and (max-width: 568px) {
+.fixedbg {
+	display: none;
+}
+}
 .container {
 	width: 1200px;
 	margin: 0 auto;
@@ -41,6 +49,11 @@ a {
 .container-small {
 	width: 700px;
 	margin: 0 auto;
+}
+@media all and (max-width: 800px) {
+	.container-small {
+		width: 80%;
+	}
 }
 .top {
 	background: #111;
