@@ -64,6 +64,15 @@ a {
 	line-height: 1.633;
 	letter-spacing: .8px;
 }
+.foot {
+	background: #111;
+	color: white;
+	padding: 30px 0;
+}
+.foot p {
+	line-height: 1.633;
+	letter-spacing: .8px;
+}
 .grid {
 	font-size: 0;
 	text-align: center;
